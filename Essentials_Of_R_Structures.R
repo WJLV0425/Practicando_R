@@ -248,6 +248,7 @@ sapply(all_prices4$june_price, power_function2, 4)
 
 # Let's suppose we have prices for all years from 2015 to 2018. This new data frame is defined as follows:
 
+items = factor(items)
 all_prices = data.frame(items=rep(c("potato", "rice", "oil"), 4),
 jan_price = c(10,20,30,10,18,25,9,17,24,9,19,27),
 mar_price = c(11,22,33,13,25,32,12,21,33,15,27,39),
@@ -258,6 +259,9 @@ all_prices
 
 # To extract the mean prices for every March in all years, we use `tapply(numerical_variable, categorical_variable, function)`. So we will need to convert the items column of the all_prices data frame to a categorical varable to take the mean price.
 
-tapply(all_prices$mar_price, factor(all_prices$items), mean) # This gives us mean March price for oil, potato, and rice in all years.
+tapply(all_prices$mar_price, factor(all_prices$items), mean) 
+# This gives us mean March price for oil, potato, and rice in all years.
 
-
+class(items)
+items = factor(items)
+str(all_prices)
