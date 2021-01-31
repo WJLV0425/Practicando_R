@@ -21,3 +21,25 @@ plot(x,y,pch = 19, col= 'blue', type = "l")
 # Now we'll look at a very strong graphical library called 'ggplot2' (Wickham H.). Let's have a look at the 'all_prices' data frame, for this example:
 
 str(all_prices)
+
+#We've got to install and load (we always load packages at the beginning of the script) 'ggplot2'.
+
+install.packages("ggplot2")
+library(ggplot2)
+
+# Naming axis. "aes()" stands for aesthetics, inside it we define both 'x' and 'y' axis with variable names.
+
+ggplot(all_prices, aes(x = items, y = jan_price)) +
+  geom_point()
+
+# We can also compute and mark the prices in January.
+
+ggplot(all_prices, aes(x=items, y=jan_price)) +
+  geom_point() +
+  geom_point(stat = "summary", fun.y = "mean", colour = "red", size = 3)
+
+# Plotting the price of January against the price of June and make separate plots using facet_grid(. ~ items).
+
+ggplot(all_prices, aes(x=jan_price, y=june_price)) +
+  geom_point() +
+  facet_grid(. ~ items)
