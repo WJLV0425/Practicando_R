@@ -43,3 +43,11 @@ ggplot(all_prices, aes(x=items, y=jan_price)) +
 ggplot(all_prices, aes(x=jan_price, y=june_price)) +
   geom_point() +
   facet_grid(. ~ items)
+
+# We also can add a linear model fit by using a `start_smooth()` layer:
+
+ggplot(all_prices, aes(x=jan_price, y=june_price)) +
+  geom_point() +
+  facet_grid(. ~ items) +
+  # se = TRUE inside stat_smooth() shows confidence interval.
+  stat_smooth(method = "lm", se = TRUE, col= "red")

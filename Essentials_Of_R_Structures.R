@@ -8,6 +8,8 @@
 
 ## Data structures in R are as follows: vectors, matrices, arrays,data frames, lists, and factors. 
 
+## VECTORS
+
 # To create a variable we use "<-" or "=".
 
 X <- 2
@@ -21,7 +23,7 @@ val= c(1,2,3,4,5,6)
 
 y= c(1,2.0,3.0,4,5, "Hello", "OK")
 
-# What R does in cases like the one above is to try to convert the values mentioned for Y to the same type. However, as r cannot convert "Hello" and "OK" to numeric, it converts values "1,2.0,3.0,4,5" to character values and assings all of them to variable y.
+# What R does in cases like the one above is to try to convert the values mentioned for Y to the same type. However, as r cannot convert "Hello" and "OK" to numeric, it converts values "1,2.0,3.0,4,5" to character values and assigns all of them to variable y.
 
 class(y)
 
@@ -37,7 +39,7 @@ jan_price = c(10,20,30)
 increase = c(1,2,3)
 mar_price = jan_price + increase
 
-# Of course we can also excute other operations as subtract, multiply, division, etc.
+# Of course, we can also exEcute other operations as subtract, multiply, division, etc.
 
 x = c(10,20,30)
 y = c(1,2,3)
@@ -57,7 +59,7 @@ x[-2]
 
 ## MATRIX
 
-# A matrix is basically a two-dimensional array of data elements with a number of columns and rows fixed. Like a vector, it can also contain one type of values/elements; two or more is not permitted. By using "matrix()" command, we can combine vector in one matrix, follow by a comma and ´nrow = 3´ indicating that there are three different items, in this case.
+# A matrix is basically a two-dimensional array of data elements with a number of columns and rows fixed. Like a vector, it can also contain one type of values/elements; two or more is not possible. By using "matrix()" command, we can combine vectors in one matrix, this command is follow by a comma and ´nrow = 3´ indicating that there are three different items, in this case.
 
 june_price = c(20,25,33) # Added to carry out the example.
 june_price
@@ -257,7 +259,7 @@ june_price = c(20,25,33,21,24,40,17,22,27,13,18,23)
 
 all_prices
 
-# To extract the mean prices for every March in all years, we use `tapply(numerical_variable, categorical_variable, function)`. So we will need to convert the items column of the all_prices data frame to a categorical varable to take the mean price.
+# To extract the mean prices for every March in all years, we use `tapply(numerical_variable, categorical_variable, function)`. So we will need to convert the items column of the all_prices data frame to a categorical variable to take the mean price.
 
 tapply(all_prices$mar_price, factor(all_prices$items), mean) 
 # This gives us mean March price for oil, potato, and rice in all years.
