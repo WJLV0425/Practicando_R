@@ -4,7 +4,7 @@
 
 ### Bibliography: Hands-On Spatial Data Analysis with R and QGIS 3.2.2. (Islam S., 2018).
 
-### PRACTICE WITH R, ESSENTIAL KNOLEDGE FOR CODING.
+### PRACTICE WITH R, ESSENTIAL KNOWLEDGE FOR CODING.
 
 ## Data structures in R are as follows: vectors, matrices, arrays,data frames, lists, and factors. 
 
